@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_popular"
+            android:icon="@drawable/icon_popular"
+            android:title="Most popular" />
+        <item
+            android:id="@+id/nav_favorites"
+            android:icon="@drawable/icon_favourite"
+            android:title="My favorites" />
+        <item
+            android:id="@+id/nav_history"
+            android:icon="@drawable/icon_history"
+            android:title="History" />
+
+    </group>
+
+    <item android:title="All categories">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_abstract"
+                    android:title="\t- Abstract" />
+                <item
+                    android:id="@+id/nav_animals"
+                    android:title="\t- Animals" />
+                <item
+                    android:id="@+id/nav_art"
+                    android:title="\t- Art" />
+                <item
+                    android:id="@+id/nav_cars"
+                    android:title="\t- Cars" />
+                <item
+                    android:id="@+id/nav_food_drink"
+                    android:title="\t- Food and Drink" />
+                <item
+                    android:id="@+id/nav_games"
+                    android:title="\t- Games" />
+                <item
+                    android:id="@+id/nav_movies"
+                    android:title="\t- Movies" />
+                <item
+                    android:id="@+id/nav_music"
+                    android:title="\t- Music" />
+                <item
+                    android:id="@+id/nav_nature"
+                    android:title="\t- Nature" />
+                <item
+                    android:id="@+id/nav_photos"
+                    android:title="\t- Photos" />
+                <item
+                    android:id="@+id/nav_places"
+                    android:title="\t- Places" />
+                <item
+                    android:id="@+id/nav_quotes"
+                    android:title="\t- Quotes" />
+                <item
+                    android:id="@+id/nav_sports"
+                    android:title="\t- Sports" />
+            </group>
+
+        </menu>
+    </item>
+</menu>

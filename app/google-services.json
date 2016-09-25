@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "414370129207",
+    "firebase_url": "https://nguyenvulebinh-hd-wallpaper.firebaseio.com",
+    "project_id": "nguyenvulebinh-hd-wallpaper",
+    "storage_bucket": "nguyenvulebinh-hd-wallpaper.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:414370129207:android:7fd51aa7e098b47e",
+        "android_client_info": {
+          "package_name": "nb.cblink.wallpaper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "414370129207-rlsaeqhca47u0qlqu88jp84rdm75b4qh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "nb.cblink.wallpaper",
+            "certificate_hash": "A04063335AD573CE67E0036C31118DC28C862BAA"
+          }
+        },
+        {
+          "client_id": "414370129207-r2igmmbnici9vesmo4t9ra3p07putphe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKgs9rMXrcMM1Wy1LZ5JfkpOi5zaw-mOA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "414370129207-r2igmmbnici9vesmo4t9ra3p07putphe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

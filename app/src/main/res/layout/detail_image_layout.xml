@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class="ImageDetailBinding">
+
+        <import type="android.view.View" />
+
+        <variable
+            name="imageItem"
+            type="nb.cblink.wallpaper.model.Image" />
+
+        <variable
+            name="imageDetailVM"
+            type="nb.cblink.wallpaper.modelview.ImageDetailViewModel" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f5f4ef"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/image_detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:background="#212121"
+                    android:scaleType="fitCenter"
+                    app:imageUrl="@{imageItem.thumbUrl}" />
+
+                <TextView
+                    android:id="@+id/image_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/image_detail"
+                    android:layout_marginTop="20dp"
+                    android:ellipsize="end"
+                    android:lines="2"
+                    android:padding="15dp"
+                    android:text="@{imageItem.name}"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="#FF60CCB4" />
+
+                <LinearLayout
+                    android:id="@+id/setting_advand_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/image_name"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical"
+                    android:paddingLeft="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="@{() -> imageDetailVM.showAdvance()}"
+                            android:text="advanced"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:textColor="#FF60CCB4" />
+
+                        <ImageView
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:layout_marginLeft="7dp"
+                            android:layout_marginTop="7dp"
+                            android:background="#00000000"
+                            android:onClick="@{() -> imageDetailVM.showAdvance()}"
+                            android:scaleType="centerCrop"
+                            android:src="@{(imageDetailVM.showAdvance == View.GONE)? @drawable/arrow_down_float : @drawable/arrow_up_float}" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:orientation="horizontal"
+                        android:visibility="@{imageDetailVM.showAdvance}">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="RESOLUTION: "
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:textColor="#FF60CCB4" />
+
+                        <Spinner
+                            android:id="@+id/spinner_res"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_below="@id/setting_advand_layout"
+                    android:orientation="horizontal"
+                    android:padding="20dp">
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:background="#009f4c"
+                        android:text="Download"
+                        android:textColor="#ffffff"
+                        android:onClick="@{() -> imageDetailVM.clickDownload()}"/>
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="#009f4c"
+                        android:text="Set Wallpaper"
+                        android:textColor="#ffffff"
+                        android:onClick="@{() -> imageDetailVM.clickSetBackground()}"/>
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="280dp"
+                    android:background="#00000000"
+                    android:onClick="@{() -> imageDetailVM.favoriteClick()}"
+                    android:src="@{imageDetailVM.favoritesImage? @drawable/icon_f_selected:@drawable/icon_f}" />
+            </RelativeLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

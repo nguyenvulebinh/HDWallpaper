@@ -1,14 +1,6 @@
 apply plugin: 'com.android.application'
 
 android {
-    signingConfigs {
-        config {
-            keyAlias 'nguyenbinh'
-            keyPassword 'b@@ng01121994'
-            storeFile file('/home/nguyenbinh/Programming/Android/keystore/nguyenbinh.jks')
-            storePassword 'b@@ng01121994'
-        }
-    }
     compileSdkVersion 24
     buildToolsVersion "24.0.0"
     defaultConfig {
